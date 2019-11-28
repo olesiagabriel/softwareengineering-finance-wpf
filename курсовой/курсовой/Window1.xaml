@@ -1,0 +1,127 @@
+﻿<Window x:Class="курсовой.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:курсовой"
+        mc:Ignorable="d"
+        Title="Пользователь: Имя_Пользователя Лимит: 15 025" Height="450" Width="800" FontSize="16">
+    <Grid Margin="0,0,5,3.5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="651*"/>
+            <ColumnDefinition Width="139*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Stretch" Height="422" VerticalAlignment="Stretch" Width="797" Grid.ColumnSpan="3" Margin="0,0,-7,-3" Background="#FFFCF9F9">
+            <TabItem Header="Доходы" Height="28" Margin="-2,-2,-2.5,-0.5" VerticalAlignment="Bottom">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFFCF9F9" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <Grid Background="#FFFAF8F8" Margin="0,-3,0,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100*"/>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="103*"/>
+                        <ColumnDefinition Width="574*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Вид источника дохода" HorizontalAlignment="Stretch" Margin="28,13,0,339" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <ComboBox HorizontalAlignment="Stretch" Margin="36,52,23.5,312" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <Label Content="Размер" HorizontalAlignment="Stretch" Margin="33,96,18.5,259" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <TextBox HorizontalAlignment="Stretch" Margin="36,132,23.5,231" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <Label Content="Дата" HorizontalAlignment="Stretch" Margin="33,174,10,182" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="35,209,24,145" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <Button Content="Добавить" HorizontalAlignment="Stretch" Margin="36,313,23.5,43" VerticalAlignment="Stretch" Grid.ColumnSpan="3"/>
+                    <Button Content="Назад" HorizontalAlignment="Stretch" Margin="10,392,0,-23.5" VerticalAlignment="Stretch" Width="75"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="271.5,10,41,339" VerticalAlignment="Stretch" Grid.Column="3"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="271.5,53,41,300" VerticalAlignment="Stretch" Grid.Column="3"/>
+                    <Button Content="Показать" HorizontalAlignment="Stretch" Margin="438.5,35,0,0" VerticalAlignment="Stretch" Width="84" Grid.Column="3" Height="28"/>
+                    <Label Content="Конец периода" HorizontalAlignment="Stretch" Margin="100.5,52,307,290" VerticalAlignment="Stretch" Grid.Column="3"/>
+                    <DataGrid HorizontalAlignment="Stretch" Height="285" Margin="110.5,101,0,0" VerticalAlignment="Stretch" Width="463" Grid.Column="3"/>
+                    <Label Content="Начало периода" HorizontalAlignment="Stretch" Margin="100.5,4,307,339" VerticalAlignment="Stretch" Grid.Column="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Расходы">
+                <Grid Background="#FFFCF9F9" Margin="0,-3,0,3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="750*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Вид источника расхода" HorizontalAlignment="Stretch" Margin="10,13,572,340" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Label Content="Размер" HorizontalAlignment="Stretch" Margin="10,89,572,268" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <Label Content="Дата" HorizontalAlignment="Stretch" Margin="10,152,604,203" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <DataGrid HorizontalAlignment="Stretch" Height="285" Margin="286,101,0,0" VerticalAlignment="Stretch" Width="463" Grid.Column="2"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="10,188,604,170" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Column="1"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="428,10,22,340" VerticalAlignment="Stretch" Grid.Column="2"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="430,56,22,295" VerticalAlignment="Stretch" Grid.Column="2"/>
+                    <Button Content="Показать" HorizontalAlignment="Stretch" Margin="144,342,515,13" VerticalAlignment="Stretch" Grid.Column="2"/>
+                    <Label Content="Начало периода" HorizontalAlignment="Stretch" Margin="266,10,321,344" VerticalAlignment="Stretch" Grid.Column="2"/>
+                    <Label Content="Конец периода" HorizontalAlignment="Stretch" Margin="266,47,319,302" VerticalAlignment="Stretch" Grid.Column="2"/>
+                    <Button Content="Назад" HorizontalAlignment="Stretch" Margin="10,342,672,13" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button Content="Изменить лимит" HorizontalAlignment="Left" Margin="10,278,0,77" VerticalAlignment="Stretch" Width="158" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Stretch" Margin="10,51,604,313" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <TextBox HorizontalAlignment="Stretch" Margin="10,118,604,245" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="2"/>
+                    <Button Content="Добавить" HorizontalAlignment="Stretch" Margin="10,243,604,113" VerticalAlignment="Stretch" Grid.ColumnSpan="2" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Статистика" HorizontalAlignment="Stretch" Margin="-2,-1.5,-2,0" Width="100" RenderTransformOrigin="0.5,0.5">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                        <GradientStop Color="#FFF6F5F5" Offset="1"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.634"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TabItem.RenderTransform>
+
+                <Grid Background="#FFFCF9F9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="23*"/>
+                        <ColumnDefinition Width="43*"/>
+                        <ColumnDefinition Width="19*"/>
+                        <ColumnDefinition Width="677*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="6" HorizontalAlignment="Stretch" Height="285" Margin="207,0,6,101" VerticalAlignment="Stretch" Width="463"/>
+                    <ComboBox Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,49,579,313" VerticalAlignment="Stretch" Grid.ColumnSpan="5"/>
+                    <Label Content="Выбор пользователя:" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0,10,579,337" VerticalAlignment="Stretch" Grid.ColumnSpan="5"/>
+                    <RadioButton Content="Отчет по доходам" Grid.Column="3" HorizontalAlignment="Stretch" Margin="6,96,579,264" VerticalAlignment="Stretch" Grid.ColumnSpan="4"/>
+                    <RadioButton Content="Отчет по расходам" Grid.Column="3" HorizontalAlignment="Stretch" Margin="6,122,579,227" VerticalAlignment="Stretch" Grid.ColumnSpan="4"/>
+                    <Label Content="Итоговое сальдо на сегодня: 10000" FontSize="18" Grid.Column="6" HorizontalAlignment="Stretch" Margin="203,352,118,0" VerticalAlignment="Stretch" FontWeight="Bold"/>
+                    <Button Content="Экспорт отчета" Grid.Column="3" HorizontalAlignment="Stretch" Margin="6,323,635,35" VerticalAlignment="Stretch" Width="120" Height="28" Grid.ColumnSpan="4"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="34,208,486,147" VerticalAlignment="Stretch" Grid.Column="6"/>
+                    <Label Content="Начало периода" HorizontalAlignment="Stretch" Margin="7,165,642,192" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="6"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="34,165,486,193" VerticalAlignment="Stretch" Grid.Column="6"/>
+                    <Label Content="Конец периода" HorizontalAlignment="Left" Margin="10,208,0,147" VerticalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="6" Width="126"/>
+                    <Button Content="Показать" HorizontalAlignment="Stretch" Margin="7,284,635,73" VerticalAlignment="Stretch" Grid.Column="3" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4">
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-0.062"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="367,323,133,34" VerticalAlignment="Stretch" Grid.Column="6"/>
+                    <DatePicker HorizontalAlignment="Stretch" Margin="367,290,133,0" VerticalAlignment="Top" Grid.Column="6" Height="28"/>
+                    <Button Content="Показать" HorizontalAlignment="Left" Margin="567,304,0,0" VerticalAlignment="Top" Width="99" Grid.Column="6" Height="24"/>
+                    <Label Content="Начало периода" HorizontalAlignment="Stretch" Margin="205,293,333,63" VerticalAlignment="Stretch" Grid.Column="6"/>
+                    <Label Content="Конец периода" HorizontalAlignment="Stretch" Margin="207,323,333,34" VerticalAlignment="Stretch" Grid.Column="6"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
