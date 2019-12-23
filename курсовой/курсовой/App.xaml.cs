@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+
 namespace курсовой
 {
     /// <summary>
@@ -13,5 +14,6 @@ namespace курсовой
     /// </summary>
     public partial class App : Application
     {
+        public static int id=0;
     }
 }

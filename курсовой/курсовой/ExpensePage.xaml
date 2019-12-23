@@ -1,0 +1,70 @@
+﻿<Window x:Class="курсовой.Window4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:курсовой"
+        mc:Ignorable="d"
+        Title="Расходы" Height="600" Width="700" FontSize="16">
+    <Window.Resources>
+        <Style x:Key="StyleButton" TargetType="Button">
+            <Setter Property="Margin" Value="0 10 0 10"/>
+            <Setter Property="TextElement.FontFamily" Value="Candara"/>
+            <Setter Property="TextElement.FontSize" Value="16"/>
+            <Setter Property="MinWidth" Value="8"/>
+            <Setter Property="MaxWidth" Value="250"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="Gold" />
+            <Setter Property="BorderBrush" Value="Gold"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="3,-8,3,-1" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Resourses/1.jpg" Opacity="0.4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="3*">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="5,10,11,2" VerticalAlignment="Center" Height="400">
+
+            <Button Style="{StaticResource StyleButton}" Content="Доходы" Margin="0 5 0 5"  Command="{Binding Income}"/>
+            <Button Style="{StaticResource StyleButton}" Content="Расходы"  Margin="0 5 0 5"   Background="Red"/>
+            <Label Content="Источники расхода" x:Name="Label1" FontFamily="Candara" Margin="0,20,0.3,0" />
+            <ComboBox SelectedIndex="1" ItemsSource="{Binding ExpenseGuide}"  SelectedItem="{Binding EXPENSE}" DisplayMemberPath="expense_type" SelectedValuePath="expense_guide_code_ID" x:Name="ComboBox1" Margin="0 5 0 5"   />
+
+            <Label Content="Размер" x:Name="Label2" FontFamily="Candara" Margin="0,5,0.3,0"/>
+
+            <TextBox Text="{Binding EXPENSESize}"  Margin="0 5 0 5" FontFamily="Candara" BorderBrush="Gold"/>
+            <Label x:Name="Label3" Content="Дата" FontFamily="Candara" Margin="0,5,0.3,0"/>
+            <DatePicker SelectedDate="{Binding EXPENSEDate}" x:Name="DatePicker1" Margin="0 5 0 5" FontFamily="Candara" BorderBrush="Gold"/>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding AddExpense}"  Margin="0 25 0 10" Content="Добавить"/>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding Cancel}"  Margin="0 25 0 10" Content="Выход" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10,42,0,9.5" VerticalAlignment="Center" Height="470">
+            <DataGrid IsReadOnly="True" Height="188" x:Name="DataGrid1" ItemsSource="{Binding ExpenseDataGrid}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип расхода" FontFamily="Candara" Binding="{Binding expense_type}"/>
+                    <DataGridTextColumn Header="Дата расхода" FontFamily="Candara" Binding="{Binding expense_date}"/>
+                    <DataGridTextColumn Header="Сумма" FontFamily="Candara" Binding="{Binding expense_size}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+           
+            <TextBlock Text="{Binding EXPENSESum}" />
+
+            <Label Content="Начало периода" FontFamily="Candara"/>
+            <DatePicker x:Name="DatePicker2" FontFamily="Candara" BorderBrush="Gold" SelectedDate="{Binding EXPENSEDate1}"/>
+            <Label Content="Конец периода" FontFamily="Candara"/>
+            <DatePicker x:Name="DatePicker3" FontFamily="Candara" BorderBrush="Gold" SelectedDate="{Binding EXPENSEDate2}"/>
+            <Button Style="{StaticResource StyleButton}"  Margin="5 20 5 0" Command="{Binding UpdateExpenseDataGrid}" Content="Сформировать отчет"/>
+            <Button Style="{StaticResource StyleButton}" Content="Печать" Command="{Binding Print}"/>
+            <Button Style="{StaticResource StyleButton}" Margin="5 0 5 5" Content="Редактировать мой профиль"  Command="{Binding MyProfile}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

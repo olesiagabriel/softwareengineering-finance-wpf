@@ -5,35 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:курсовой"
         mc:Ignorable="d"
-        Title="Кошелек" Height="425.5" Width="573.167" FontSize="16" Background="Gold" 
+        Title="Учет домашних финансов" Height="430" Width="575" FontSize="16" 
         ResizeMode="CanResizeWithGrip">
-
+    <Window.Resources>
+        <Style x:Key="StyleButton" TargetType="Button">
+            <Setter Property="Margin" Value="0 10 0 10"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="Candara"></Setter>
+            <Setter Property="TextElement.FontSize" Value="16"></Setter>
+            <Setter Property="MinWidth" Value="200"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Gold" ></Setter>
+            <Setter Property="BorderBrush" Value="Gold"></Setter>
+            
+        </Style>
+    </Window.Resources>
     <Grid Margin="0,0,-5,0" SizeChanged="Grid_SizeChanged">
         <Grid.Background>
             <ImageBrush ImageSource="Resourses/1.jpg"/>
-        </Grid.Background> 
-        <DockPanel>
-            <Menu DockPanel.Dock="Top" MinHeight="20"/>
-            <Image Stretch="UniformToFill" Source="Resourses/1.jpg" />
-            <Button Content="Регистрация" HorizontalAlignment="Stretch" Margin="193,262,0,0" VerticalAlignment="Stretch" Width="189" Height="80"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition>
+                
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label FontFamily="Candara">Логин</Label>
+            <TextBox Text="{Binding Login}"  Name="TextBox1" FontFamily="Candara" BorderBrush="Gold" TextChanged="TextBox1_TextChanged" />
+            
+            <Label FontFamily="Candara">Пароль</Label>
+            <TextBox Text="{Binding Password}" Name="PasswordBox1" FontFamily="Candara" BorderBrush="Gold"/>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding Authorization}" Content="Войти"/>
+            <Button Style="{StaticResource StyleButton}" Content="Регистрация" Command="{Binding Registration}" />
+            
 
-        </DockPanel>
-        <Label Content="Логин" HorizontalAlignment="Stretch" Margin="193,57,180,307" VerticalAlignment="Stretch" Height="34" Width="200"/>
-        <Label Content="Пароль" HorizontalAlignment="Stretch" Margin="193,136,180,228" VerticalAlignment="Stretch" Height="34" Width="200"/>
-        <TextBox HorizontalAlignment="Stretch" Height="35" Margin="194,96,189,267" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="190"/>
-        <TextBox HorizontalAlignment="Stretch" Height="36" Margin="194,175,190,187" TextWrapping="Wrap" VerticalAlignment="Stretch" Width="189"/>
-       
-        <Button Content="Войти" HorizontalAlignment="Stretch" Margin="194,257,190,111" VerticalAlignment="Stretch" Width="189" Click="Button_Click" Height="30" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Content="Регистрация" HorizontalAlignment="Stretch" Margin="193,292,191,76" VerticalAlignment="Stretch" Width="189" Height="30"/>
 
+        </StackPanel>
   </Grid>
 </Window>

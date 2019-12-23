@@ -1,0 +1,76 @@
+﻿<Window x:Class="курсовой.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:курсовой"
+        mc:Ignorable="d"
+        Title="Доходы" Height="600" Width="700" FontSize="16"
+        ResizeMode="CanResizeWithGrip">
+    <Window.Resources>
+        <Style x:Key="StyleButton" TargetType="Button">
+            <Setter Property="Margin" Value="0 10 0 10"></Setter>
+            <Setter Property="TextElement.FontFamily" Value="Candara"></Setter>
+            <Setter Property="TextElement.FontSize" Value="16"></Setter>
+            <Setter Property="MinWidth" Value="8"/>
+            <Setter Property="MaxWidth" Value="250"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="Gold" ></Setter>
+            <Setter Property="BorderBrush" Value="Gold"></Setter>
+           
+        </Style>
+    </Window.Resources>
+    <Grid Margin="3,-8,3,-1"  >
+        <Grid.Background>
+            <ImageBrush ImageSource="Resourses/1.jpg" Opacity="0.4"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="3*">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="5,10,11,2" VerticalAlignment="Center" Height="400">
+
+            <Button Style="{StaticResource StyleButton}" Content="Доходы" Name="Button2" Margin="0 5 0 5" Background="Red" />
+            <Button Style="{StaticResource StyleButton}" Content="Расходы" Name="Button1" Margin="0 5 0 5"  Command="{Binding Expense}" />
+            <Label Content="Источники дохода" Name="Label1" FontFamily="Candara" Margin="0,20,0.3,0" ></Label>
+            <ComboBox SelectedIndex="1" ItemsSource="{Binding IncomeGuide}"  BorderBrush="Gold" SelectedItem="{Binding iNCOME}" DisplayMemberPath="income_type" SelectedValuePath="income_guide_code_ID" Name="ComboBox1" Margin="0 5 0 5"  SelectionChanged="ComboBox1_SelectionChanged" ></ComboBox>
+
+            <Label Content="Размер" Name="Label2" FontFamily="Candara" Margin="0,5,0.3,0"></Label>
+
+            <TextBox Text="{Binding iNCOMESize}"  Margin="0 5 0 5" FontFamily="Candara" BorderBrush="Gold"/>
+            <Label Name="Label3" Content="Дата" FontFamily="Candara" Margin="0,5,0.3,0"></Label>
+            <DatePicker SelectedDate="{Binding iNCOMEDate}" Name="DatePicker1" Margin="0 5 0 5" FontFamily="Candara" BorderBrush="Gold"></DatePicker>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding AddIncome}"  Margin="0 25 0 10" Content="Добавить"/>
+            <Button Style="{StaticResource StyleButton}" Command="{Binding Cancel}"  Margin="0 25 0 10" Content="Выход" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10,42,0,9.5" VerticalAlignment="Center" Height="470" >
+            <DataGrid  IsReadOnly="True"  Height="188" Name="DataGrid1" ItemsSource="{Binding IncomeDataGrid}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип дохода" FontFamily="Candara" Binding="{Binding income_type}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата дохода" FontFamily="Candara" Binding="{Binding income_date}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Сумма" FontFamily="Candara" Binding="{Binding income_size}"></DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock Text="{Binding iNCOMESum}" />
+
+            <Label Content="Начало периода" FontFamily="Candara"/>
+            <DatePicker Name="DatePicker2" FontFamily="Candara" BorderBrush="Gold" SelectedDate="{Binding iNCOMEDate1}"/>
+            <Label Content="Конец периода" FontFamily="Candara"/>
+            <DatePicker Name="DatePicker3" FontFamily="Candara" BorderBrush="Gold" SelectedDate="{Binding iNCOMEDate2}"/>
+            <Button Style="{StaticResource StyleButton}"  Margin="5 20 5 0" Command="{Binding UpdateIncomeDataGrid}" Content="Сформировать отчет"/>
+
+
+            <Button Style="{StaticResource StyleButton}" Content="Печать" Command="{Binding Print}"/>
+            
+
+            <Button Style="{StaticResource StyleButton}"  Margin="5 0 5 5" Content="Редактировать мой профиль" Command="{Binding MyProfile}"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

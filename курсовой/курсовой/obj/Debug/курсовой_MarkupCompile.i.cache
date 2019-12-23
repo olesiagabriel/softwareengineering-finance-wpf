@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\3 курс\Фомина\курсовойй проект\курсовой\курсовой\obj\Debug\
+C:\Users\User\Desktop\3 курс\Фомина\курсовой проект\курсовой\курсовой\obj\Debug\
 курсовой
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\3 курс\Фомина\курсовойй проект\курсовой\курсовой\App.xaml
-2462529049
+C:\Users\User\Desktop\3 курс\Фомина\курсовой проект\курсовой\курсовой\App.xaml
+5-246394588
 
-101706787159
-131569487696
-MainWindow.xaml;Window1.xaml;
+201305126022
+211835944200
+MainWindow.xaml;EditMyProfilePage.xaml;IncomePage.xaml;RegistrationPage.xaml;ExpensePage.xaml;
 
-False
+True
 
